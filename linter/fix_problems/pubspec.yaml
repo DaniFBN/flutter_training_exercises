@@ -1,0 +1,25 @@
+name: fix_problems
+description: A new Flutter project.
+
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.0.3 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutterando_analysis: 0.0.2
+  dart_code_metrics: 5.5.1
+
+flutter:
+  uses-material-design: true

@@ -1,5 +1,16 @@
 # Native Exercises
 
+## Flavor
+
+* Implemente Flavor para alterar os Clientes, ex.: Daniel e FTeam.
+* Implemente o DartDefine para alterar os Ambients, ex.: Dev, Prod.
+
+### Requisitos técnicos
+* Implemente no Android e iOS
+* Utilizar Flavor e DartDefine
+* AppIcon, AppName, BundleID devem mudar
+
+
 ## MethodChannel
 Faça uma listagem de algum tópico, por exemplo: Series, Filmes, Times, Linguagens.
 

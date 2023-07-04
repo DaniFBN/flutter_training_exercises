@@ -6,3 +6,7 @@
 
 ### Requisitos técnicos
 * Faça com animação implícita e explícita
+
+### Dicas
+* Implícita: AnimatedAlign(heightFactor), AnimatedRotation, ClipRect
+* Explícita: Transform.rotate

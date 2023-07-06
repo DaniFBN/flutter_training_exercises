@@ -21,7 +21,7 @@ abstract class AccountModel {
 
     historic.add(
       TransactionHistoryModel(
-        data: 'Deposito de $value',
+        data: 'Deposito de R\$ ${value.toStringAsFixed(2)}',
         type: TransactionType.deposit,
       ),
     );
@@ -33,7 +33,7 @@ abstract class AccountModel {
     _balance -= value;
     historic.add(
       TransactionHistoryModel(
-        data: 'Saque de $value',
+        data: 'Saque de R\$ ${value.toStringAsFixed(2)}',
         type: TransactionType.withdraw,
       ),
     );

@@ -56,7 +56,7 @@ void bank() {
   stdout.writeln('Agência: ${account.agencyNumber}');
 
   late MenuOption? option;
-  late bool confirmExit;
+  bool confirmExit = false;
   do {
     stdout.writeln(isCurrentAccount ? menuCurrentMessage : menuSavingMessage);
     final optionCode = stdin.readLineSync()!;
@@ -108,7 +108,7 @@ enum MenuOption {
   }
 }
 
-final menuCurrentMessage = r'''
+final menuCurrentMessage = '''
 Bem vindo ao Menu
 
 1 - Depositar
@@ -116,10 +116,10 @@ Bem vindo ao Menu
 3 - Ver informações da conta
 4 - Histórico de atividades
 5 - Transferir
-0 - Sair
+0 - Sair 
 ''';
 
-final menuSavingMessage = r'''
+final menuSavingMessage = '''
 Bem vindo ao Menu
 
 1 - Depositar

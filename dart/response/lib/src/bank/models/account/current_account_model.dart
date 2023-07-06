@@ -19,7 +19,7 @@ class CurrentAccountModel extends AccountModel {
     setBalance(newBalance);
     historic.add(
       TransactionHistoryModel(
-        data: 'Transferência de $value para $userName',
+        data: 'Transferência de R\$ ${value.toStringAsFixed(2)} para $userName',
         type: TransactionType.transfer,
       ),
     );

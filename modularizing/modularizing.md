@@ -13,5 +13,5 @@
 * Deve ser possível alterar o Tema tanto no Login quanto na Home.
 
 ### Requisitos técnicos
-* Os módulos relacionados a tela não deve ter nenhum `export`
+* Os módulos relacionados a tela não deve ter nenhum `export` nos `Binds` do FlutterModular
 

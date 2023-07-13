@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ifood_layout/app/widgets/app_bar_widget.dart';
 
+import '../widgets/app_bar_widget.dart';
 import '../widgets/tab_bar_widget.dart';
 import 'init_page.dart';
 
@@ -31,20 +31,29 @@ class _HomePageState extends State<HomePage>
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.sizeOf(context);
+
     return Scaffold(
-      appBar: AppBarWidget(
-        tabBar: TabBarWidget(controller: tabController),
-      ),
-      body: TabBarView(
-        controller: tabController,
-        children: const [
-          InitPage(),
-          Center(child: Text('Restaurantes')),
-          Center(child: Text('Mercados')),
-          Center(child: Text('Bebidas')),
-          Center(child: Text('Farmácias')),
-          Center(child: Text('Pets')),
-          Center(child: Text('Shopping')),
+      body: CustomScrollView(
+        slivers: [
+          AppBarWidget(
+            tabBar: TabBarWidget(controller: tabController),
+          ),
+          SliverFillRemaining(
+            fillOverscroll: true,
+            child: TabBarView(
+              controller: tabController,
+              children: const [
+                InitPage(),
+                Center(child: Text('Restaurantes')),
+                Center(child: Text('Mercados')),
+                Center(child: Text('Bebidas')),
+                Center(child: Text('Farmácias')),
+                Center(child: Text('Pets')),
+                Center(child: Text('Shopping')),
+              ],
+            ),
+          ),
         ],
       ),
     );

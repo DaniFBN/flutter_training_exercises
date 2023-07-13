@@ -15,7 +15,8 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppBar(
+    return SliverAppBar(
+      floating: true,
       bottom: tabBar,
       title: Row(
         mainAxisAlignment: MainAxisAlignment.center,

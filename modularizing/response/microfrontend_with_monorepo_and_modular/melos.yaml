@@ -1,0 +1,6 @@
+name: MicroFrontendWithMonorepoAndModular
+
+packages:
+  - app
+  - financial_module
+  - rh_module

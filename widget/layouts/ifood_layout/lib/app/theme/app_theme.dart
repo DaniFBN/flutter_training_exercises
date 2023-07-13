@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 class AppTheme {
   static final lightTheme = ThemeData(
+    cardColor: Colors.grey.shade200,
+    primaryColor: Colors.red.shade800,
     appBarTheme: AppBarTheme(
       elevation: 0,
       centerTitle: true,

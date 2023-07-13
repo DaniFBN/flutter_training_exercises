@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 void main() {
   runApp(const MyApp());
@@ -38,6 +39,8 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
     super.initState();
 
+    print(pi);
+
     valueNotifier.addListener(() {
       print(valueNotifier.value);
     });
@@ -68,7 +71,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 '$_counter',
                 style: Theme.of(context).textTheme.headlineMedium,
               ),
-              Expanded(child: SizedBox(),),
+              Expanded(
+                child: SizedBox(),
+              ),
               ElevatedButton(
                 onPressed: () => throw 20,
                 child: const Text('throw Exception'),

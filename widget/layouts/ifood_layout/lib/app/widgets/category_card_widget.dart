@@ -14,14 +14,16 @@ class CategoryCardWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Card(
-          elevation: 0,
-          shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(16)),
-          ),
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Image.network(imageUrl),
+        Expanded(
+          child: Card(
+            elevation: 0,
+            shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(Radius.circular(12)),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Image.network(imageUrl),
+            ),
           ),
         ),
         const SizedBox(height: 4),

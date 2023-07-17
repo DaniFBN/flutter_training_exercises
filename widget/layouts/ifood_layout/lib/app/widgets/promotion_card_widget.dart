@@ -1,21 +1,23 @@
 import 'package:flutter/material.dart';
 
 class PromotionCardWidget extends StatelessWidget {
-  const PromotionCardWidget({super.key, required this.color});
+  const PromotionCardWidget({
+    Key? key,
+    required this.width,
+    required this.color,
+  }) : super(key: key);
 
+  final double width;
   final Color color;
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.sizeOf(context);
-
     return Container(
+      width: width,
       decoration: BoxDecoration(
         color: color,
         borderRadius: const BorderRadius.all(Radius.circular(20)),
       ),
-      height: size.width * 0.35,
-      width: size.width * 0.8,
     );
   }
 }

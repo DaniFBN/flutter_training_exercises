@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:math';
 
 import 'package:flutter/material.dart';
@@ -19,11 +20,11 @@ class ExplicitExpansion extends StatefulWidget {
 }
 
 class _ExplicitExpansionState extends State<ExplicitExpansion>
-    with TickerProviderStateMixin {
-  late AnimationController controller;
-  late Animation<double?> angleAnimation;
-  late Animation<Color?> colorAnimation;
-  late Animation<double?> heightAnimation;
+    with SingleTickerProviderStateMixin {
+  late final AnimationController controller;
+  late final Animation<double?> angleAnimation;
+  late final Animation<double?> heightAnimation;
+  late final Animation<Color?> colorAnimation;
 
   bool isExpanded = false;
 
@@ -45,15 +46,10 @@ class _ExplicitExpansionState extends State<ExplicitExpansion>
       begin: 0,
       end: 1.2,
     ).animate(controller);
-  }
-
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
 
     colorAnimation = ColorTween(
-      begin: Theme.of(context).textTheme.bodyMedium!.color!,
-      end: Theme.of(context).primaryColor,
+      begin: Colors.black,
+      end: Colors.deepPurple,
     ).animate(controller);
   }
 
@@ -139,3 +135,5 @@ class _ExplicitExpansionState extends State<ExplicitExpansion>
     );
   }
 }
+
+

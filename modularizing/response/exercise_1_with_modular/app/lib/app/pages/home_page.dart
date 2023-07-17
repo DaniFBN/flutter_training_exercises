@@ -24,6 +24,10 @@ class HomePage extends StatelessWidget {
               child: const Text('RH Detail'),
             ),
             ElevatedButton(
+              onPressed: () => Modular.to.pushNamed('/rh/person/'),
+              child: const Text('Person'),
+            ),
+            ElevatedButton(
               onPressed: () => Modular.to.pushNamed('/financial/'),
               child: const Text('Financial'),
             ),

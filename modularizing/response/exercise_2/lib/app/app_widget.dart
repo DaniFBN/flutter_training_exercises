@@ -12,10 +12,17 @@ class AppWidget extends StatelessWidget {
 
     return MaterialApp.router(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+      themeMode: ThemeMode.dark,
+      highContrastTheme: ThemeData(
+        scaffoldBackgroundColor: Colors.red,
         useMaterial3: true,
       ),
+      highContrastDarkTheme: ThemeData(
+        scaffoldBackgroundColor: Colors.blue,
+        useMaterial3: true,
+      ),
+      theme: ThemeData.light(useMaterial3: true),
+      darkTheme: ThemeData.dark(useMaterial3: true),
       routeInformationParser: Modular.routeInformationParser,
       routerDelegate: Modular.routerDelegate,
     );

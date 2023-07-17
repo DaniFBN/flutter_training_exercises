@@ -11,3 +11,7 @@ O app contém alguns problemas e algumas más práticas.
 * [Dashboard Web 2](https://dribbble.com/shots/21818960-LunchAssist-school-nutrition-training-platform)
 * [Task App](https://dribbble.com/shots/19846532-Productivity-Mobile-App)
 * [Chat App](https://dribbble.com/shots/19433389-Chatox-Chatting-Mobile-App-Dark-Mode)
+
+## Layouts feitos
+* [IFood](https://github.com/DaniFBN/flutter_training_exercises/tree/main/widget/layouts/ifood_layout)
+* [Nubank](https://github.com/DaniFBN/flutter_training_exercises/tree/main/widget/layouts/nubank_layout)

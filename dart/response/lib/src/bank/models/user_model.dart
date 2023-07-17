@@ -1,4 +1,4 @@
-import 'account/account_model.dart';
+import 'account_model.dart';
 
 class UserModel {
   final String name;
@@ -7,16 +7,11 @@ class UserModel {
 
   const UserModel({
     required this.name,
-    required this.account,
     required String password,
+    required this.account,
   }) : _password = password;
 
-  bool validatePassword(String value) {
-    if (value == _password) return true;
-    return false;
+  bool confirmPassword(String value) {
+    return _password == value;
   }
-
-  @override
-  String toString() =>
-      'UserModel(name: $name, _password: $_password, account: $account)';
 }

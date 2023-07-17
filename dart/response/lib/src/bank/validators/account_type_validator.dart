@@ -1,5 +1,5 @@
-bool accountTypeValidator(String value) {
-  final handledValue = value.toLowerCase();
-  if (handledValue != 'p' && handledValue != 'c') return false;
-  return true;
+String? accountTypeValidator(String value) {
+  if (value == '0' || value == '1') return null;
+
+  return '$value é uma opção inválida. Digite 0 ou 1.';
 }

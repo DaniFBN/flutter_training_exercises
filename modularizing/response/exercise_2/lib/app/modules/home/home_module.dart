@@ -1,5 +1,6 @@
 import 'package:flutter_modular/flutter_modular.dart';
 
+import '../../core/shared/stores/theme_store.dart';
 import '../../core/modules/user/stores/user_store.dart';
 import 'pages/home_page.dart';
 
@@ -11,6 +12,7 @@ class HomeModule extends Module {
       child: (_, args) => HomePage(
         email: args.data ?? 'Error',
         userStore: Modular.get<UserStore>(),
+        themeStore: Modular.get<ThemeStore>(),
       ),
     ),
   ];

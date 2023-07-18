@@ -1,6 +1,8 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:exercise_2/app/core/modules/user/stores/user_store.dart';
 import 'package:flutter/material.dart';
+
+import 'package:exercise_2/app/core/modules/user/stores/user_store.dart';
+import 'package:exercise_2/app/core/shared/stores/theme_store.dart';
 
 import '../../../core/shared/services/navigator_service.dart';
 
@@ -8,9 +10,12 @@ class LoginPage extends StatelessWidget {
   LoginPage({
     Key? key,
     required this.userStore,
+    required this.themeStore,
   }) : super(key: key);
 
   final UserStore userStore;
+  final ThemeStore themeStore;
+
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
@@ -60,6 +65,16 @@ class LoginPage extends StatelessWidget {
               ),
               icon: const Icon(Icons.login),
               label: const Text('Entrar'),
+            ),
+            const SizedBox(height: 40),
+            ElevatedButton.icon(
+              onPressed: themeStore.toggle,
+              style: ElevatedButton.styleFrom(
+                elevation: 0,
+                backgroundColor: theme.colorScheme.secondaryContainer,
+              ),
+              icon: const Icon(Icons.sunny),
+              label: const Text('Change Theme'),
             ),
           ],
         ),

@@ -1,167 +1,92 @@
 import 'package:flutter/material.dart';
+import 'package:task_layout/app/widgets/menu_widget.dart';
+
+import '../widgets/card_group_widget.dart';
+import '../widgets/home_app_bar_widget.dart';
+import '../widgets/routine_card_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-
     return Scaffold(
-      appBar: AppBar(
-        title: Row(
-          children: [
-            const CircleAvatar(
-              foregroundImage: NetworkImage(
-                'https://avatars.githubusercontent.com/u/54218517?v=4',
-              ),
-            ),
-            const SizedBox(width: 8),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Welcome Back,',
-                  style: theme.textTheme.titleSmall,
-                ),
-                Text(
-                  'Daniel Fernandes',
-                  style: theme.textTheme.titleMedium,
-                ),
-              ],
-            ),
-          ],
-        ),
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.notifications_none_rounded),
-          ),
-          IconButton(onPressed: () {}, icon: const Icon(Icons.menu)),
-        ],
-      ),
-      body: Column(
+      appBar: const HomeAppBarWidget(),
+      body: const Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Padding(
+          Padding(
             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-            child: TextField(
-              decoration: InputDecoration(
-                hintText: 'Search',
-                prefixIcon: Icon(Icons.search),
-              ),
-            ),
-          ),
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 12),
-              child: Column(
-                children: [
-                  Row(
-                    children: [
-                      Expanded(
-                        child: Text(
-                          'Routines',
-                          style: theme.textTheme.titleMedium,
-                        ),
-                      ),
-                      TextButton(
-                        onPressed: () {},
-                        child: const Text('See All'),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 20),
-                  const Expanded(
-                    child: Row(
-                      children: [
-                        Expanded(child: RoutineCardWidget()),
-                        Expanded(child: RoutineCardWidget()),
-                      ],
-                    ),
-                  )
-                ],
-              ),
-            ),
-          ),
-          const Expanded(
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 12),
-              child: Column(),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class RoutineCardWidget extends StatelessWidget {
-  const RoutineCardWidget({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-
-    return Card(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 12,
-          vertical: 20,
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Card(
-              color: Colors.black12,
-              child: Padding(
-                padding: EdgeInsets.all(8.0),
-                child: Icon(Icons.sunny),
-              ),
-            ),
-            const SizedBox(height: 8),
-            const Text('Morning Routine'),
-            const SizedBox(height: 8),
-            const Divider(),
-            const SizedBox(height: 4),
-            Row(
+            child: Column(
               children: [
-                const Text('Progress'),
-                const Spacer(),
-                Text(
-                  '60%',
-                  style: theme.textTheme.bodyMedium!.copyWith(
-                      color: theme.primaryColor, fontWeight: FontWeight.w500),
+                TextField(
+                  decoration: InputDecoration(
+                    hintText: 'Search',
+                    prefixIcon: Icon(Icons.search),
+                  ),
                 ),
               ],
             ),
-            const SizedBox(height: 4),
-            LayoutBuilder(
-              builder: (_, constraints) {
-                return ClipRRect(
-                  borderRadius: const BorderRadius.all(
-                    Radius.circular(4),
-                  ),
-                  child: Stack(
-                    children: [
-                      Container(
-                        color: Colors.black26,
-                        height: 6,
-                        width: constraints.maxWidth,
-                      ),
-                      Container(
-                        color: theme.primaryColor,
-                        height: 6,
-                        width: constraints.maxWidth * .7,
-                      ),
-                    ],
-                  ),
-                );
-              },
-            )
-          ],
-        ),
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+            child: Column(
+              children: [
+                MenuWidget(title: 'Routines'),
+                Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Expanded(child: RoutineCardWidget()),
+                    Expanded(child: RoutineCardWidget()),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          Column(
+            children: [
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                child: MenuWidget(title: 'My Task'),
+              ),
+              CardGroupWidget(
+                icon: Icons.post_add_rounded,
+                title: 'To Do',
+                subtitle: '5 tasks',
+              ),
+              CardGroupWidget(
+                icon: Icons.list_alt_rounded,
+                title: 'In progress',
+                subtitle: '9 tasks',
+              ),
+              CardGroupWidget(
+                icon: Icons.task_outlined,
+                title: 'Done',
+                subtitle: '21 tasks',
+              ),
+            ],
+          ),
+        ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.analytics),
+            label: 'Settings',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.analytics),
+            label: 'Settings',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: 'Settings',
+          ),
+        ],
       ),
     );
   }

@@ -21,10 +21,19 @@ class AppWidget extends StatelessWidget {
         textTheme: const TextTheme(
           titleSmall: TextStyle(color: Color(0xFF9da4ae)),
         ),
+        primaryIconTheme: const IconThemeData(color: Colors.white),
         textButtonTheme: TextButtonThemeData(
           style: TextButton.styleFrom(
             foregroundColor: const Color(0xFFff8700),
           ),
+        ),
+        bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+          elevation: 0,
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
+          type: BottomNavigationBarType.fixed,
+          selectedItemColor: Color(0xFFff8700),
+          unselectedItemColor: Color(0xFF9da4ae),
         ),
         cardTheme: const CardTheme(
           color: Colors.white,

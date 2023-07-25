@@ -10,6 +10,8 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.sizeOf(context);
+
     return Scaffold(
       appBar: const HomeAppBarWidget(),
       body: const Column(
@@ -17,15 +19,11 @@ class HomePage extends StatelessWidget {
         children: [
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-            child: Column(
-              children: [
-                TextField(
-                  decoration: InputDecoration(
-                    hintText: 'Search',
-                    prefixIcon: Icon(Icons.search),
-                  ),
-                ),
-              ],
+            child: TextField(
+              decoration: InputDecoration(
+                hintText: 'Search',
+                prefixIcon: Icon(Icons.search),
+              ),
             ),
           ),
           Padding(
@@ -33,8 +31,20 @@ class HomePage extends StatelessWidget {
             child: Column(
               children: [
                 MenuWidget(title: 'Routines'),
+                // SizedBox(
+                //   height: 220, // Recurso didático
+                //   child: ListView.builder(
+                //     itemCount: 20,
+                //     scrollDirection: Axis.horizontal,
+                //     itemBuilder: (_, __) {
+                //       return SizedBox(
+                //         width: size.width * 0.4,
+                //         child: const RoutineCardWidget(),
+                //       );
+                //     },
+                //   ),
+                // ),
                 Row(
-                  mainAxisSize: MainAxisSize.max,
                   children: [
                     Expanded(child: RoutineCardWidget()),
                     Expanded(child: RoutineCardWidget()),
@@ -79,7 +89,7 @@ class HomePage extends StatelessWidget {
             label: 'Settings',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.analytics),
+            icon: Icon(Icons.now_widgets_outlined),
             label: 'Settings',
           ),
           BottomNavigationBarItem(

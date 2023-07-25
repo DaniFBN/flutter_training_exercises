@@ -44,7 +44,7 @@ class AppWidget extends StatelessWidget {
         ),
         inputDecorationTheme: const InputDecorationTheme(
           filled: true,
-          isDense: true,
+          contentPadding: EdgeInsets.symmetric(horizontal: 8),
           fillColor: Colors.white,
           border: OutlineInputBorder(
             borderSide: BorderSide.none,

@@ -37,6 +37,8 @@ class CardGroupWidget extends StatelessWidget {
               child: Text(
                 title,
                 style: theme.textTheme.bodyLarge,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
               ),
             ),
             Text(

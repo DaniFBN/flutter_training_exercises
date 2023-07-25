@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mercado_livre_layout/app/themes/app_theme.dart';
 
 import 'pages/home_page.dart';
 
@@ -7,8 +8,9 @@ class AppWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: HomePage(),
+    return MaterialApp(
+      theme: AppTheme.light,
+      home: const HomePage(),
     );
   }
 }

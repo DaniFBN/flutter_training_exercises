@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/animation/animation_response/melos_animation_response.iml" filepath="$PROJECT_DIR$/animation/animation_response/melos_animation_response.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dart/dart_response/melos_dart_response.iml" filepath="$PROJECT_DIR$/dart/dart_response/melos_dart_response.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dart/fix_problems/melos_fix_problems.iml" filepath="$PROJECT_DIR$/dart/fix_problems/melos_fix_problems.iml" />
+      <module fileurl="file://$PROJECT_DIR$/melos_exercises.iml" filepath="$PROJECT_DIR$/melos_exercises.iml" />
+    </modules>
+  </component>
+</project>

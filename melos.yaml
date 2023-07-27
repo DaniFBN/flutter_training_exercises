@@ -1,0 +1,8 @@
+name: Exercises
+
+packages:
+  - animation/**
+  - architecture/**
+  - dart/**
+  # - arroba_design_system
+  # - modules/**

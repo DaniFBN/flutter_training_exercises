@@ -1,10 +1,10 @@
-name: fix_problems
+name: dart_fix_problems
 description: A sample command-line application.
 version: 1.0.0
 # repository: https://github.com/my_org/my_repo
 
 environment:
-  sdk: ^3.0.3
+  sdk: ^3.0.6
 
 # Add regular dependencies here.
 dependencies:

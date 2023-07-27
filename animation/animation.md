@@ -2,11 +2,13 @@
 
 ## ExpansionPanelList
 
-* Implemente o [ExpansionPanelList](https://api.flutter.dev/flutter/material/ExpansionPanelList-class.html)
+- Implemente o [ExpansionPanelList](https://api.flutter.dev/flutter/material/ExpansionPanelList-class.html)
 
 ### Requisitos técnicos
-* Faça com animação implícita e explícita
+
+- Faça com animação implícita e explícita
 
 ### Dicas
-* Implícita: AnimatedAlign(heightFactor), AnimatedRotation, ClipRect
-* Explícita: Transform.rotate
+
+- Implícita: AnimatedAlign(heightFactor), AnimatedRotation, ClipRect
+- Explícita: Transform.rotate

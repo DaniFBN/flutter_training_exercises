@@ -21,6 +21,7 @@ class RoutineCardWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Card(
+              semanticContainer: false,
               color: Colors.black12,
               child: Padding(
                 padding: EdgeInsets.all(8.0),

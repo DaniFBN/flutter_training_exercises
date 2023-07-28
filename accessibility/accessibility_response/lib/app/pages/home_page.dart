@@ -12,69 +12,58 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const HomeAppBarWidget(),
-      body: const Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-            child: TextField(
-              decoration: InputDecoration(
-                hintText: 'Search',
-                prefixIcon: Icon(Icons.search),
+      body: const SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+              child: TextField(
+                decoration: InputDecoration(
+                  hintText: 'Search',
+                  prefixIcon: Icon(Icons.search),
+                ),
               ),
             ),
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-            child: Column(
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+              child: Column(
+                children: [
+                  MenuWidget(title: 'Routine'),
+                  Row(
+                    children: [
+                      Expanded(child: RoutineCardWidget()),
+                      Expanded(child: RoutineCardWidget()),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            Column(
               children: [
-                MenuWidget(title: 'Routines'),
-                // SizedBox(
-                //   height: 220, // Recurso didático
-                //   child: ListView.builder(
-                //     itemCount: 20,
-                //     scrollDirection: Axis.horizontal,
-                //     itemBuilder: (_, __) {
-                //       return SizedBox(
-                //         width: size.width * 0.4,
-                //         child: const RoutineCardWidget(),
-                //       );
-                //     },
-                //   ),
-                // ),
-                Row(
-                  children: [
-                    Expanded(child: RoutineCardWidget()),
-                    Expanded(child: RoutineCardWidget()),
-                  ],
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                  child: MenuWidget(title: 'My Task'),
+                ),
+                CardGroupWidget(
+                  icon: Icons.post_add_rounded,
+                  title: 'To Do',
+                  subtitle: '5 tasks',
+                ),
+                CardGroupWidget(
+                  icon: Icons.list_alt_rounded,
+                  title: 'In progress',
+                  subtitle: '9 tasks',
+                ),
+                CardGroupWidget(
+                  icon: Icons.task_outlined,
+                  title: 'Done',
+                  subtitle: '21 tasks',
                 ),
               ],
             ),
-          ),
-          Column(
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-                child: MenuWidget(title: 'My Task'),
-              ),
-              CardGroupWidget(
-                icon: Icons.post_add_rounded,
-                title: 'To Do',
-                subtitle: '5 tasks',
-              ),
-              CardGroupWidget(
-                icon: Icons.list_alt_rounded,
-                title: 'In progress',
-                subtitle: '9 tasks',
-              ),
-              CardGroupWidget(
-                icon: Icons.task_outlined,
-                title: 'Done',
-                subtitle: '21 tasks',
-              ),
-            ],
-          ),
-        ],
+          ],
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const [

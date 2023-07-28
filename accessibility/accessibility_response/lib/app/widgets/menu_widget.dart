@@ -13,16 +13,22 @@ class MenuWidget extends StatelessWidget {
     final theme = Theme.of(context);
 
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Expanded(
+        Flexible(
           child: Text(
             title,
             style: theme.textTheme.titleMedium,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
           ),
         ),
         TextButton(
           onPressed: () {},
-          child: const Text('See All'),
+          child: Text(
+            'See All',
+            semanticsLabel: 'See All $title',
+          ),
         ),
       ],
     );

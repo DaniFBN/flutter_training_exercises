@@ -2,7 +2,9 @@ name: Exercises
 
 packages:
   - animation/**
+  - accessibility/**
   - architecture/**
   - dart/**
+  - widget/**
   # - arroba_design_system
   # - modules/**

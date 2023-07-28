@@ -1,0 +1,6 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Flutter Run -&gt; 'widget_fix_problems'" type="FlutterRunConfigurationType" factoryName="Flutter">
+    <option name="filePath" value="$PROJECT_DIR$/widget/widget_fix_problems/lib/main.dart" />
+    <method v="2" />
+  </configuration>
+</component>

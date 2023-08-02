@@ -1,17 +1,15 @@
-name: rh_module
+name: rh_module_1
 description: A new Flutter package project.
 version: 0.0.1
 homepage:
-publish_to: "none"
 
 environment:
-  sdk: '>=3.0.3 <4.0.0'
+  sdk: '>=3.0.6 <4.0.0'
   flutter: ">=1.17.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  flutter_modular: ^5.0.3
 
 dev_dependencies:
   flutter_test:
@@ -54,6 +52,3 @@ flutter:
   #
   # For details regarding fonts in packages, see
   # https://flutter.dev/custom-fonts/#from-packages
-
-
- 

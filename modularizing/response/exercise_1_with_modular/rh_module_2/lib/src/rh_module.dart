@@ -1,8 +1,8 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:rh_module/src/submodules/person/person_module.dart';
 
 import 'pages/rh_detail_page.dart';
 import 'pages/rh_page.dart';
+import 'submodules/person/person_module.dart';
 
 class RhModule extends Module {
   @override

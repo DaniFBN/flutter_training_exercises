@@ -1,6 +1,6 @@
-import 'package:financial_module/financial_module.dart';
+import 'package:financial_module_1/financial_module_1.dart';
 import 'package:flutter/material.dart';
-import 'package:rh_module/rh_module.dart';
+import 'package:rh_module_1/rh_module_1.dart';
 
 import 'pages/home_page.dart';
 

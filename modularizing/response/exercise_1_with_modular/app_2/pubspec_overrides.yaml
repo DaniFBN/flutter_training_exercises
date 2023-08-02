@@ -1,0 +1,6 @@
+# melos_managed_dependency_overrides: financial_module_2,rh_module_2
+dependency_overrides:
+  financial_module_2:
+    path: ../financial_module_2
+  rh_module_2:
+    path: ../rh_module_2

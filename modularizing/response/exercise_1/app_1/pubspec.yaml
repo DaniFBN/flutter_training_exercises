@@ -1,4 +1,4 @@
-name: app
+name: app_1
 description: A new Flutter project.
 publish_to: "none"
 
@@ -13,10 +13,10 @@ dependencies:
 
   cupertino_icons: 1.0.2
 
-  financial_module:
-    path: ../financial_module
-  rh_module:
-    path: ../rh_module
+  financial_module_1:
+    path: ../financial_module_1
+  rh_module_1:
+    path: ../rh_module_1
 
 dev_dependencies:
   flutter_test:

@@ -15,3 +15,4 @@ O app contém alguns problemas e algumas más práticas.
 ## Layouts feitos
 * [IFood](https://github.com/DaniFBN/flutter_training_exercises/tree/main/widget/layouts/ifood_layout)
 * [Nubank](https://github.com/DaniFBN/flutter_training_exercises/tree/main/widget/layouts/nubank_layout)
+* [Task](https://github.com/DaniFBN/flutter_training_exercises/tree/main/widget/layouts/task_layout)

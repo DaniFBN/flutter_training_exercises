@@ -12,10 +12,10 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const HomeAppBarWidget(),
-      body: const Column(
+      body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Padding(
+          const Padding(
             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
             child: TextField(
               decoration: InputDecoration(
@@ -25,10 +25,13 @@ class HomePage extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
             child: Column(
               children: [
-                MenuWidget(title: 'Routines'),
+                MenuWidget(
+                  title: 'Routines',
+                  onTap: () => Navigator.of(context).pushNamed('/routines'),
+                ),
                 // SizedBox(
                 //   height: 220, // Recurso didático
                 //   child: ListView.builder(
@@ -42,7 +45,7 @@ class HomePage extends StatelessWidget {
                 //     },
                 //   ),
                 // ),
-                Row(
+                const Row(
                   children: [
                     Expanded(child: RoutineCardWidget()),
                     Expanded(child: RoutineCardWidget()),
@@ -54,20 +57,24 @@ class HomePage extends StatelessWidget {
           Column(
             children: [
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-                child: MenuWidget(title: 'My Task'),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                child: MenuWidget(
+                  title: 'My Task',
+                  onTap: () => Navigator.of(context).pushNamed('/tasks'),
+                ),
               ),
-              CardGroupWidget(
+              const CardGroupWidget(
                 icon: Icons.post_add_rounded,
                 title: 'To Do',
                 subtitle: '5 tasks',
               ),
-              CardGroupWidget(
+              const CardGroupWidget(
                 icon: Icons.list_alt_rounded,
                 title: 'In progress',
                 subtitle: '9 tasks',
               ),
-              CardGroupWidget(
+              const CardGroupWidget(
                 icon: Icons.task_outlined,
                 title: 'Done',
                 subtitle: '21 tasks',

@@ -4,9 +4,11 @@ class MenuWidget extends StatelessWidget {
   const MenuWidget({
     Key? key,
     required this.title,
+    required this.onTap,
   }) : super(key: key);
 
   final String title;
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +23,7 @@ class MenuWidget extends StatelessWidget {
           ),
         ),
         TextButton(
-          onPressed: () {},
+          onPressed: onTap,
           child: const Text('See All'),
         ),
       ],

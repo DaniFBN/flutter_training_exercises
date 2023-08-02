@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 import 'pages/home_page.dart';
+import 'pages/routines_page.dart';
+import 'pages/task_page.dart';
+import 'themes/app_theme.dart';
 
 class AppWidget extends StatelessWidget {
   const AppWidget({super.key});
@@ -8,52 +11,13 @@ class AppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      showSemanticsDebugger: true,
-      theme: ThemeData(
-        primaryColor: const Color(0xFFff8700),
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFFff8700)),
-        useMaterial3: true,
-        scaffoldBackgroundColor: const Color(0xFFf4f3f8),
-        appBarTheme: const AppBarTheme(
-          elevation: 0,
-          backgroundColor: Color(0xFFf4f3f8),
-        ),
-        dividerTheme: const DividerThemeData(color: Color(0xFFf4f3f8)),
-        textTheme: const TextTheme(
-          titleSmall: TextStyle(color: Color(0xFF9da4ae)),
-        ),
-        primaryIconTheme: const IconThemeData(color: Colors.white),
-        textButtonTheme: TextButtonThemeData(
-          style: TextButton.styleFrom(
-            foregroundColor: const Color(0xFFff8700),
-          ),
-        ),
-        bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-          elevation: 0,
-          showSelectedLabels: false,
-          showUnselectedLabels: false,
-          type: BottomNavigationBarType.fixed,
-          selectedItemColor: Color(0xFFff8700),
-          unselectedItemColor: Color(0xFF9da4ae),
-        ),
-        cardTheme: const CardTheme(
-          color: Colors.white,
-          elevation: 0,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(16)),
-          ),
-        ),
-        inputDecorationTheme: const InputDecorationTheme(
-          filled: true,
-          contentPadding: EdgeInsets.symmetric(horizontal: 8),
-          fillColor: Colors.white,
-          border: OutlineInputBorder(
-            borderSide: BorderSide.none,
-            borderRadius: BorderRadius.all(Radius.circular(12)),
-          ),
-        ),
-      ),
-      home: const HomePage(),
+      theme: AppTheme.theme,
+      initialRoute: '/',
+      routes: {
+        '/': (_) => const HomePage(),
+        '/routines': (_) => const RoutinesPage(),
+        '/tasks': (_) => const TaskPage(),
+      },
     );
   }
 }

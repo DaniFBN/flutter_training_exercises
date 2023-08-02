@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../themes/color_extension.dart';
+
 class PercentBarWidget extends StatelessWidget {
   const PercentBarWidget({
     Key? key,
@@ -11,6 +13,7 @@ class PercentBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final colors = theme.extension<ColorExtension>()!;
 
     return LayoutBuilder(
       builder: (_, constraints) {
@@ -21,7 +24,7 @@ class PercentBarWidget extends StatelessWidget {
           child: Stack(
             children: [
               Container(
-                color: Colors.black12,
+                color: colors.percentageBackground,
                 height: 6,
                 width: constraints.maxWidth,
               ),

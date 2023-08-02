@@ -10,7 +10,7 @@ class Calculator {
   }
 
   num multiply(num value1, num value2) {
-    return value1 / value2;
+    return value1 * value2;
   }
 
   num divide(num value1, num value2) {

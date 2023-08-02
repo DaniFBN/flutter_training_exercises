@@ -1,0 +1,47 @@
+import 'package:result_dart/result_dart.dart';
+
+import '../../../../core/exceptions/app_exception.dart';
+import '../../../../core/exceptions/validation_exception.dart';
+import '../entities/person_entity.dart';
+import '../params/create_person_param.dart';
+import '../repositories/person_repository.dart';
+
+abstract interface class ICreatePersonUsecase {
+  AsyncResult<PersonEntity, AppException> call(CreatePersonParam param);
+}
+
+class CreatePersonUsecase implements ICreatePersonUsecase {
+  final IPersonRepository _repository;
+
+  const CreatePersonUsecase(this._repository);
+
+  @override
+  AsyncResult<PersonEntity, AppException> call(CreatePersonParam param) async {
+    final regex = RegExp(r'[@#$%&*^!]');
+    if (regex.hasMatch(param.name)) {
+      return ValidationException(
+        'O nome não deve ter caracteres especiais',
+      ).toFailure();
+    } else if (param.name.trim().length < 3) {
+      return ValidationException('O nome deve ter 3 letras').toFailure();
+    }
+
+    final handledCpf = param.cpf.replaceAll(RegExp('[.-]'), '');
+    if (handledCpf.length != 11) {
+      return ValidationException('O cpf deve ter 11 dígitos').toFailure();
+    }
+
+    final now = DateTime.now();
+    final eighteenYearsAgo = now.copyWith(year: now.year - 18);
+    if (param.birth.isAfter(eighteenYearsAgo)) {
+      return ValidationException('Deve ser maior de 18 anos').toFailure();
+    }
+
+    final email = param.email;
+    if (email != null && email.hasError) {
+      return ValidationException(email.error!).toFailure();
+    }
+
+    return _repository.create(param);
+  }
+}

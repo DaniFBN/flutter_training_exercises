@@ -1,10 +1,11 @@
 name: Exercises
 
 packages:
-  - animation/**
   - accessibility/**
+  - animation/**
   - architecture/**
   - dart/**
+  - documentation/**
+  - linter/**
+  - modularizing/**
   - widget/**
-  # - arroba_design_system
-  # - modules/**

@@ -16,11 +16,7 @@ class AppModule extends Module {
   ];
 
   @override
-  final List<ModularRoute> routes = [
-    ModuleRoute('/', module: PersonVnModule()),
-    // ModuleRoute('/', module: PersonCubitModule()),
-    // ModuleRoute('/', module: PersonTripleModule()),
-    // ModuleRoute('/', module: PersonCnModule()),
-    // ModuleRoute('/', module: PersonBlocModule()),
-  ];
+  void routes(RouteManager r) {
+    r.module('/', module: PersonTripleModule());
+  }
 }

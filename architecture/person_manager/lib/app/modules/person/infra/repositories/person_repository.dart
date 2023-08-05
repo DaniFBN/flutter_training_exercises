@@ -26,6 +26,9 @@ final class PersonRepository implements IPersonRepository {
     } on AppException catch (e) {
       return Result.failure(e);
     }
+    // catch (e) {
+    //   return Result.failure(UnknownException());
+    // }
   }
 
   @override

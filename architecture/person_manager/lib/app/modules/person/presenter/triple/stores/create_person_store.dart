@@ -21,5 +21,10 @@ class CreatePersonStore extends Store<PersonEntity?> {
     final result = await _createPersonUsecase(param);
 
     result.fold(update, setError);
+
+    // result.fold(
+    //   (entity) => update(entity),
+    //   (exception) => setError(exception),
+    // );
   }
 }

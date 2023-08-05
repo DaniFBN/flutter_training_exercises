@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 import '../../../../../core/services/snack_bar/i_snack_bar_service.dart';
+import '../../../../../core/utils/interfaces/facade.dart';
 import '../../../../../core/value_objects/email_vo.dart';
 import '../../../domain/params/create_person_param.dart';
 import '../stores/create_person_store.dart';
@@ -12,7 +13,7 @@ import '../stores/events/persons_event.dart';
 import '../stores/persons_store.dart';
 import '../stores/states/create_person_state.dart';
 
-class CreatePersonController {
+class CreatePersonController extends Facade {
   final formKey = GlobalKey<FormState>();
   final nameController = TextEditingController(text: 'Daniel A');
   final cpfController = TextEditingController(text: '12312312312');
@@ -67,6 +68,7 @@ class CreatePersonController {
     }
   }
 
+  @override
   void dispose() {
     _createStoreSubscription.cancel();
   }

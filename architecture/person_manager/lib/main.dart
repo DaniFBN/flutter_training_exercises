@@ -10,3 +10,7 @@ void main() {
 
 // Domain - Usecase - Obrigatoriamente deve validar
 
+
+// Page - Widget
+// Controller? - Facade
+// Store - Observer/Reatividade

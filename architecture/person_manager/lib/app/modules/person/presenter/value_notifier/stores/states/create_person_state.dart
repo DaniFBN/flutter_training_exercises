@@ -1,7 +1,7 @@
 import '../../../../../../core/exceptions/app_exception.dart';
 import '../../../../domain/entities/person_entity.dart';
 
-abstract class CreatePersonState {
+sealed class CreatePersonState {
   const CreatePersonState();
 }
 

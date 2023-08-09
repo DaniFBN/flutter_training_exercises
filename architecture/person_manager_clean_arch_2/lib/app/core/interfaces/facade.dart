@@ -1,0 +1,3 @@
+class Facade {
+  void dispose() {}
+}

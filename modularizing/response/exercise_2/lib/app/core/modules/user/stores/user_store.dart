@@ -1,9 +1,32 @@
 import 'package:flutter/material.dart';
 
-class UserStore extends ValueNotifier<String> {
-  UserStore() : super('erro@email.com');
+enum UserPermission { page1, page2 }
+
+class UserModel {
+  final List<UserPermission> permissions;
+  final String email;
+
+  const UserModel({
+    required this.permissions,
+    required this.email,
+  });
+}
+
+class UserStore extends ValueNotifier<UserModel?> {
+  UserStore() : super(null);
+
+  bool get isLogged => value != null;
+
+  void logout() {
+    value = null;
+  }
 
   void setUser(String email) {
-    value = email;
+    if (!email.contains('@')) return;
+
+    value = UserModel(
+      permissions: [UserPermission.page1],
+      email: email,
+    );
   }
 }

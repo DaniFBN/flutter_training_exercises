@@ -1,8 +1,10 @@
-import 'package:exercise_2/app/core/modules/user/user_module.dart';
-import 'package:exercise_2/app/modules/home/home_module.dart';
-import 'package:exercise_2/app/core/shared/stores/theme_store.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
+import 'core/modules/user/user_module.dart';
+import 'core/shared/guards/logged_guard.dart';
+import 'core/shared/guards/page1_guard.dart';
+import 'core/shared/stores/theme_store.dart';
+import 'modules/home/home_module.dart';
 import 'modules/login/login_module.dart';
 
 class AppModule extends Module {
@@ -19,6 +21,10 @@ class AppModule extends Module {
   @override
   final List<ModularRoute> routes = [
     ModuleRoute('/login', module: LoginModule()),
-    ModuleRoute('/', module: HomeModule()),
+    ModuleRoute(
+      '/',
+      module: HomeModule(),
+      guards: [LoggedGuard(), Page1Guard()],
+    ),
   ];
 }

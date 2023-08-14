@@ -1,3 +1,4 @@
+import 'package:exercise_2/app/core/modules/user/stores/user_store.dart';
 import 'package:exercise_2/app/core/shared/services/navigator_service.dart';
 import 'package:exercise_2/app/core/shared/stores/theme_store.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +13,7 @@ class AppWidget extends StatefulWidget {
 
 class _AppWidgetState extends State<AppWidget> {
   final themeStore = Modular.get<ThemeStore>();
+  final userStore = Modular.get<UserStore>();
 
   @override
   void initState() {
@@ -19,6 +21,21 @@ class _AppWidgetState extends State<AppWidget> {
 
     Modular.setInitialRoute('/login/');
     Modular.setNavigatorKey(NavigatorService.navigatorKey);
+
+    // userStore.addListener(logoutListener);
+  }
+
+  // void logoutListener() {
+  //   if (!userStore.isLogged) {
+  //     Modular.to.navigate('/login/');
+  //   }
+  // }
+
+  @override
+  void dispose() {
+    // userStore.removeListener(logoutListener);
+
+    super.dispose();
   }
 
   @override

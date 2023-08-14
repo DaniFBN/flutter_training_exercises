@@ -1,8 +1,8 @@
 import 'package:exercise_2/app/core/shared/services/navigator_service.dart';
 import 'package:flutter/material.dart';
 
-import '../../../core/shared/stores/theme_store.dart';
 import '../../../core/modules/user/stores/user_store.dart';
+import '../../../core/shared/stores/theme_store.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({
@@ -56,7 +56,7 @@ class HomePage extends StatelessWidget {
               const SizedBox(height: 40),
               ElevatedButton.icon(
                 onPressed: () async {
-                  userStore.setUser('logout');
+                  userStore.logout();
 
                   await Future.delayed(const Duration(seconds: 2));
 

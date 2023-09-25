@@ -14,10 +14,8 @@ class CreatePersonUsecase implements ICreatePersonUsecase {
   @override
   Future<PersonEntity> call(CreatePersonParam param) {
     final handledName = param.name.trim();
-    final nameRegex = RegExp('[0-9]');
-    if (nameRegex.hasMatch(handledName) ||
-        handledName.length <= 1 ||
-        !handledName.contains(' ')) {
+    final nameRegex = RegExp(r'^[a-zA-Z]+( [a-zA-Z]+)+$');
+    if (!nameRegex.hasMatch(handledName)) {
       throw Exception('Nome inválido');
     }
 
@@ -27,7 +25,10 @@ class CreatePersonUsecase implements ICreatePersonUsecase {
 
     final handledCpf = param.cpf.trim().replaceAll('[.-]', '');
     final cpfRegex = RegExp(r'^[0-9]{11}$');
-    if (!cpfRegex.hasMatch(handledCpf)) {
+
+    final cpfIsValidByRegex = cpfRegex.hasMatch(handledCpf);
+    final cpfIsValidByLogic = _validateCPF(handledCpf);
+    if (!cpfIsValidByRegex && !cpfIsValidByLogic) {
       throw Exception('CPF inválido');
     }
 
@@ -51,5 +52,42 @@ class CreatePersonUsecase implements ICreatePersonUsecase {
     }
 
     return _repository.create(param);
+  }
+
+  bool _validateCPF(String cpf) {
+    final handledCpf = cpf.replaceAll(RegExp('[.-]'), '');
+    final splittedCpf = handledCpf.split('').map(int.parse).toList();
+
+    final firstStepCpf = splittedCpf.getRange(0, 9);
+    int multiplier = 10;
+    int sumValue = 0;
+    for (final digit in firstStepCpf) {
+      sumValue += digit * multiplier;
+
+      multiplier--;
+    }
+
+    int multiplierValue = sumValue * 10;
+    int rest = multiplierValue % 11;
+    if (rest == 10) rest = 0;
+
+    if (rest != splittedCpf.elementAt(9)) return false;
+
+    final secondStepCpf = splittedCpf.getRange(0, 10);
+    multiplier = 11;
+    sumValue = 0;
+    for (final digit in secondStepCpf) {
+      sumValue += digit * multiplier;
+
+      multiplier--;
+    }
+
+    multiplierValue = sumValue * 10;
+    rest = multiplierValue % 11;
+    if (rest == 10) rest = 0;
+
+    if (rest != splittedCpf.elementAt(10)) return false;
+
+    return true;
   }
 }

@@ -98,17 +98,17 @@ class _AddPersonPageState extends State<AddPersonPage> {
                       ),
                     ),
                     const SizedBox(height: 8),
-                    TextField(
+                    TextFormField(
                       controller: cpfController,
                       decoration: const InputDecoration(labelText: 'CPF'),
                     ),
                     const SizedBox(height: 8),
-                    TextField(
+                    TextFormField(
                       controller: emailController,
                       decoration: const InputDecoration(labelText: 'Email'),
                     ),
                     const SizedBox(height: 8),
-                    TextField(
+                    TextFormField(
                       controller: phoneController,
                       decoration: const InputDecoration(labelText: 'Telefone'),
                     ),
@@ -135,6 +135,7 @@ class _AddPersonPageState extends State<AddPersonPage> {
                             state: 'SP',
                           ),
                         );
+
                         widget.cubit.create(param);
                       },
                       child: const Text('Adicionar'),
@@ -149,3 +150,4 @@ class _AddPersonPageState extends State<AddPersonPage> {
     );
   }
 }
+

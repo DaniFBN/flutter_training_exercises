@@ -1,0 +1,29 @@
+name: person_manager_either
+description: A new Flutter project.
+
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.1.2 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  shared_preferences: 2.2.1
+  flutter_modular: 6.3.2
+  flutter_bloc: 8.1.3
+  fpdart: ^1.1.0
+  dartz: ^0.10.1
+  result_dart: ^1.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true

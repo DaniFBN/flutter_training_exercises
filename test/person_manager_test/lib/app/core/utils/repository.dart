@@ -4,7 +4,7 @@ import 'either.dart';
 
 typedef CustomAsyncCallback<T> = Future<T> Function();
 
-class Repository {
+abstract class Repository {
   const Repository();
 
   Future<Either<AppFailure, T>> execute<T>({

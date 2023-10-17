@@ -26,12 +26,14 @@ class CreatePersonUsecase implements ICreatePersonUsecase {
       return Left(DomainFailure('Email inválido'));
     }
 
-    final handledCpf = param.cpf.trim().replaceAll('[.-]', '');
+    final handledCpf = param.cpf.trim().replaceAll(RegExp('[.-]'), '');
     final cpfRegex = RegExp(r'^[0-9]{11}$');
-    
-    final cpfIsValidByRegex = cpfRegex.hasMatch(handledCpf);
+    if (!cpfRegex.hasMatch(handledCpf)) {
+      return Left(DomainFailure('CPF inválido'));
+    }
+
     final cpfIsValidByLogic = _validateCPF(handledCpf);
-    if (!cpfIsValidByRegex && !cpfIsValidByLogic) {
+    if (!cpfIsValidByLogic) {
       return Left(DomainFailure('CPF inválido'));
     }
 

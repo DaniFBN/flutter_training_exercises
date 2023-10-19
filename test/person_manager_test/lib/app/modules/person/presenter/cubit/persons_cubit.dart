@@ -16,7 +16,7 @@ class PersonsCubit extends Cubit<PersonsState> {
     final result = await _getPersonsUsecase();
 
     result.fold(
-      (left) => emit(FailurePersonsState(left)),
+      (failure) => emit(FailurePersonsState(failure)),
       (persons) => emit(DataPersonsState(persons)),
     );
   }

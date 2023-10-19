@@ -61,7 +61,7 @@ void main() {
         // Assert
         expect(response.isRight, isTrue);
 
-        final person = response.fold(id, id) as PersonEntity;
+        final person = response.fold(id, id);
         expect(person, isA<PersonEntity>());
 
         verify(() => repo.create(param)).called(1);

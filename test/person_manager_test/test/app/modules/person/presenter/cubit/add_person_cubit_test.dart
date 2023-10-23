@@ -11,8 +11,11 @@ import '../../mocks.dart';
 void main() {
   final usecase = CreatePersonUsecaseMock();
   final param = CreatePersonParamMock();
-  final sut = AddPersonCubit(usecase);
+  late AddPersonCubit sut;
 
+  setUp(() {
+    sut = AddPersonCubit(usecase);
+  });
   tearDown(() => reset(usecase));
 
   group('AddPersonCubit | Success |', () {

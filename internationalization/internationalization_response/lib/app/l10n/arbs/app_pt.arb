@@ -1,0 +1,13 @@
+{
+  "welcome": "Bem vindo de volta, ",
+  "search": "Pesquisar",
+  "routine": "Rotina",
+  "seeAll": "Veja todos",
+  "myTask": "Minha task",
+  "toDo": "A fazer",
+  "inProgress": "Em progresso",
+  "done": "Concluído",
+  "progress": "Progresso",
+  "taskAmount": "{amount, plural, =0{Nenhuma} =1{1 tarefa} other{{amount} tarefas}}",
+  "dailyRoutine": "{daily, select, m{Rotina Matinal} a{Rotina da Tarde} n{Rotina Noturna} other{Rotina}}"
+}

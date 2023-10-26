@@ -1,0 +1,30 @@
+{
+  "welcome": "Welcome Back, ",
+  "@welcome": {
+    "description": "Welcome message"
+  },
+  "search": "Search",
+  "routine": "Routine",
+  "seeAll": "See All",
+  "myTask": "My Task",
+  "toDo": "To Do",
+  "inProgress": "In progress",
+  "done": "Done",
+  "progress": "Progress",
+  "taskAmount": "{amount, plural, =0{Empty} =1{1 task} other{{amount} tasks}}",
+  "@taskAmount": {
+    "placeholders": {
+      "amount": {
+        "type": "num"
+      }
+    }
+  },
+  "dailyRoutine": "{daily, select, m{Morning Routine} a{Afternoon Routine} n{Night Routine} other{Routine}}",
+  "@dailyRoutine": {
+    "placeholders": {
+      "daily": {
+        "type": "String"
+      }
+    }
+  }
+}

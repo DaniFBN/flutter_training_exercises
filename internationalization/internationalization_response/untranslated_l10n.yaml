@@ -1,0 +1,15 @@
+{
+  "es": [
+    "welcome",
+    "search",
+    "routine",
+    "seeAll",
+    "myTask",
+    "toDo",
+    "inProgress",
+    "done",
+    "progress",
+    "taskAmount",
+    "dailyRoutine"
+  ]
+}

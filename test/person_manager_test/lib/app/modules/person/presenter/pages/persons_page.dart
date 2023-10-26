@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:person_manager_test/app/modules/person/presenter/pages/widgets/custom_progress_indicator.dart';
 
 import '../cubit/persons_cubit.dart';
 import '../cubit/state/persons_state.dart';
@@ -34,9 +35,14 @@ class _PersonsPageState extends State<PersonsPage> {
         builder: (context, PersonsState state) {
           switch (state) {
             case LoadingPersonsState():
-              return const Center(child: CircularProgressIndicator());
+              return const Center(child: CustomProgressIndicator());
             case FailurePersonsState():
-              return Center(child: Text(state.failure.message));
+              return Center(
+                child: Text(
+                  state.failure.message,
+                  key: const ValueKey('FAILURE-MESSAGE'),
+                ),
+              );
             case DataPersonsState():
               return ListView.separated(
                 itemCount: state.persons.length,

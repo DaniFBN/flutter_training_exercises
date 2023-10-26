@@ -30,7 +30,7 @@ class _AddPersonPageState extends State<AddPersonPage> {
   final emailController = TextEditingController(text: 'dani.noronha@fteam.dev');
   final phoneController = TextEditingController(text: '(11) 1234-12345');
   final cpfController = TextEditingController(text: '330.786.970-10');
-  final birthAtController = TextEditingController(text: '1999-12-12');
+  final birthAtController = TextEditingController(text: '');
   late final StreamSubscription cubitSubscription;
 
   @override
@@ -114,9 +114,7 @@ class _AddPersonPageState extends State<AddPersonPage> {
                         final isValid = formKey.currentState!.validate();
                         if (!isValid) return;
 
-                        final birthAt =
-                            DateTime.tryParse(birthAtController.text) ??
-                                DateTime.now();
+                        final birthAt = DateTime.parse(birthAtController.text);
 
                         final param = CreatePersonParam(
                           name: nameController.text,

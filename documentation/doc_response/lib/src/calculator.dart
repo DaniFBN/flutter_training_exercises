@@ -2,6 +2,11 @@ import 'dart:math' as math;
 
 /// [Calculator] é uma classe que contém operações matemáticas
 class Calculator {
+
+  /// Construtor para criar uma calculadora
+  const Calculator();
+
+
   /// Deve somar 2 valores.  
   /// 
   /// Ambos valores([value1] e [value2]) são [num], então tanto [int] como 
@@ -10,7 +15,7 @@ class Calculator {
     return value1 + value2;
   }
 
-  /// Deve subtrair 2 valores.  
+  /// Deve subtrair 2 valores.
   /// 
   /// Ambos valores([value1] e [value2]) são [num], então tanto [int] como 
   /// [double] são aceitos
@@ -56,3 +61,4 @@ class Calculator {
     return math.pow(value, value2);
   }
 }
+

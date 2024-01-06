@@ -34,7 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void listener() {
-    print(valueNotifier.value);
+    debugPrint(valueNotifier.value.toString());
   }
 
   @override

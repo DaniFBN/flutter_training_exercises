@@ -8,7 +8,7 @@ class AppModule extends Module {
   @override
   final List<ModularRoute> routes = [
     ChildRoute('/', child: (_, __) => const HomePage()),
-    ModuleRoute('/financial', module: FinancialModule()),
-    ModuleRoute('/rh', module: RhModule()),
+    ModuleRoute(AppRoutes.financialRoute, module: FinancialModule()),
+    ModuleRoute('/rh2', module: RhModule()),
   ];
 }

@@ -15,11 +15,18 @@ class AddPersonCubit extends Cubit<AddPersonState> {
 
     await Future.delayed(const Duration(seconds: 3));
 
-    try {
-      final newPerson = await _createPersonUsecase(param);
-      emit(SuccessAddPersonState(newPerson));
-    } catch (e) {
-      emit(FailureAddPersonState(e.toString()));
-    }
+    final result = await _createPersonUsecase(param);
+
+    result.fold(
+      (l) => emit(FailureAddPersonState(l)),
+      (r) => emit(SuccessAddPersonState(r)),
+    );
+
+    // final newState = result.fold<AddPersonState>(
+    //   FailureAddPersonState.new,
+    //   SuccessAddPersonState.new,
+    // );
+
+    // emit(newState);
   }
 }

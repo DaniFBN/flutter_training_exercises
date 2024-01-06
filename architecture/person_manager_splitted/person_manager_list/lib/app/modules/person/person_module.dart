@@ -19,6 +19,7 @@ class PersonModule extends Module {
   @override
   void binds(Injector i) {
     i.addLazySingleton(AddPersonCubit.new);
+    i.addLazySingleton(Persons2Cubit.new);
     i.addLazySingleton(PersonsCubit.new);
     i.addLazySingleton<IGetPersonsUsecase>(GetPersonsUsecase.new);
     i.addLazySingleton<ICreatePersonUsecase>(CreatePersonUsecase.new);
@@ -30,7 +31,7 @@ class PersonModule extends Module {
   void routes(RouteManager r) {
     r.child(
       '/',
-      child: (context) => PersonsPage(cubit: Modular.get<PersonsCubit>()),
+      child: (context) => PersonsPage(cubit: Modular.get<Persons2Cubit>()),
     );
     r.child(
       '/add',

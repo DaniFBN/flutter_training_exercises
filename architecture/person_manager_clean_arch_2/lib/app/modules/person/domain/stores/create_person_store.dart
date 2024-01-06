@@ -18,6 +18,12 @@ class CreatePersonStore extends Bloc<CreatePersonEvent, CreatePersonState> {
   ) async {
     emit(const LoadingCreatePersonState());
 
+    // final hasError = event.param.hasError;
+    // if(hasError){
+    //   return emit(ErrorCreatePersonState(event.param.errors.first));
+
+    // }
+
     final validateResult = event.param.validate();
 
     final isValid = validateResult.fold<bool>(

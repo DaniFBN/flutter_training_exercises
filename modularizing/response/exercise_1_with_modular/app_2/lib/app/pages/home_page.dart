@@ -16,11 +16,11 @@ class HomePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             ElevatedButton(
-              onPressed: () => Modular.to.pushNamed('/rh/'),
+              onPressed: () => Modular.to.pushNamed('/rh2/'),
               child: const Text('RH'),
             ),
             ElevatedButton(
-              onPressed: () => Modular.to.pushNamed('/rh/detail'),
+              onPressed: () => Modular.to.pushNamed('/rh2/detail'),
               child: const Text('RH Detail'),
             ),
             ElevatedButton(
@@ -28,7 +28,9 @@ class HomePage extends StatelessWidget {
               child: const Text('Person'),
             ),
             ElevatedButton(
-              onPressed: () => Modular.to.pushNamed('/financial/'),
+              onPressed: () => Modular.to.pushNamed(
+                AppRoutes.financialPageFullRoute,
+              ),
               child: const Text('Financial'),
             ),
           ],
@@ -36,4 +38,10 @@ class HomePage extends StatelessWidget {
       ),
     );
   }
+}
+
+class AppRoutes {
+  static const financialRoute = '/financial';
+  static const financialPageRoute = '/';
+  static const financialPageFullRoute = financialRoute + financialPageRoute;
 }

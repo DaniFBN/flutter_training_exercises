@@ -55,7 +55,7 @@ class _PersonsPageState extends State<PersonsPage> {
                       child: ListTile(
                         isThreeLine: true,
                         title: Text(
-                          person.name,
+                          person.name.value,
                           style: theme.textTheme.titleLarge,
                         ),
                         subtitle: Column(

@@ -4,12 +4,28 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/accessibility/accessibility_response/melos_accessibility_response.iml" filepath="$PROJECT_DIR$/accessibility/accessibility_response/melos_accessibility_response.iml" />
       <module fileurl="file://$PROJECT_DIR$/animation/animation_response/melos_animation_response.iml" filepath="$PROJECT_DIR$/animation/animation_response/melos_animation_response.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modularizing/response/exercise_1/app_1/melos_app_1.iml" filepath="$PROJECT_DIR$/modularizing/response/exercise_1/app_1/melos_app_1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modularizing/response/exercise_1_with_modular/app_2/melos_app_2.iml" filepath="$PROJECT_DIR$/modularizing/response/exercise_1_with_modular/app_2/melos_app_2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/documentation/calculator/melos_calculator.iml" filepath="$PROJECT_DIR$/documentation/calculator/melos_calculator.iml" />
       <module fileurl="file://$PROJECT_DIR$/dart/dart_fix_problems/melos_dart_fix_problems.iml" filepath="$PROJECT_DIR$/dart/dart_fix_problems/melos_dart_fix_problems.iml" />
       <module fileurl="file://$PROJECT_DIR$/dart/dart_response/melos_dart_response.iml" filepath="$PROJECT_DIR$/dart/dart_response/melos_dart_response.iml" />
+      <module fileurl="file://$PROJECT_DIR$/documentation/doc_response/melos_doc_response.iml" filepath="$PROJECT_DIR$/documentation/doc_response/melos_doc_response.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modularizing/response/exercise_2/melos_exercise_2.iml" filepath="$PROJECT_DIR$/modularizing/response/exercise_2/melos_exercise_2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modularizing/response/exercise_1/financial_module_1/melos_financial_module_1.iml" filepath="$PROJECT_DIR$/modularizing/response/exercise_1/financial_module_1/melos_financial_module_1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modularizing/response/exercise_1_with_modular/financial_module_2/melos_financial_module_2.iml" filepath="$PROJECT_DIR$/modularizing/response/exercise_1_with_modular/financial_module_2/melos_financial_module_2.iml" />
       <module fileurl="file://$PROJECT_DIR$/widget/layouts/ifood_layout/melos_ifood_layout.iml" filepath="$PROJECT_DIR$/widget/layouts/ifood_layout/melos_ifood_layout.iml" />
+      <module fileurl="file://$PROJECT_DIR$/linter/linter_fix_problems/melos_linter_fix_problems.iml" filepath="$PROJECT_DIR$/linter/linter_fix_problems/melos_linter_fix_problems.iml" />
+      <module fileurl="file://$PROJECT_DIR$/linter/linter_response/melos_linter_response.iml" filepath="$PROJECT_DIR$/linter/linter_response/melos_linter_response.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modularizing/response/exercise_1_with_modular/melos_melos_spec.iml" filepath="$PROJECT_DIR$/modularizing/response/exercise_1_with_modular/melos_melos_spec.iml" />
       <module fileurl="file://$PROJECT_DIR$/widget/layouts/mercado_livre_layout/melos_mercado_livre_layout.iml" filepath="$PROJECT_DIR$/widget/layouts/mercado_livre_layout/melos_mercado_livre_layout.iml" />
       <module fileurl="file://$PROJECT_DIR$/widget/layouts/nubank_layout/melos_nubank_layout.iml" filepath="$PROJECT_DIR$/widget/layouts/nubank_layout/melos_nubank_layout.iml" />
+      <module fileurl="file://$PROJECT_DIR$/architecture/person_manager/melos_person_manager.iml" filepath="$PROJECT_DIR$/architecture/person_manager/melos_person_manager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modularizing/response/exercise_1/rh_module_1/melos_rh_module_1.iml" filepath="$PROJECT_DIR$/modularizing/response/exercise_1/rh_module_1/melos_rh_module_1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modularizing/response/exercise_1_with_modular/rh_module_2/melos_rh_module_2.iml" filepath="$PROJECT_DIR$/modularizing/response/exercise_1_with_modular/rh_module_2/melos_rh_module_2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/styling_platforms/styling_exercise/melos_styling_exercise.iml" filepath="$PROJECT_DIR$/styling_platforms/styling_exercise/melos_styling_exercise.iml" />
+      <module fileurl="file://$PROJECT_DIR$/styling_platforms/styling_response/melos_styling_response.iml" filepath="$PROJECT_DIR$/styling_platforms/styling_response/melos_styling_response.iml" />
       <module fileurl="file://$PROJECT_DIR$/widget/layouts/task_layout/melos_task_layout.iml" filepath="$PROJECT_DIR$/widget/layouts/task_layout/melos_task_layout.iml" />
+      <module fileurl="file://$PROJECT_DIR$/architecture/task_response/melos_task_response.iml" filepath="$PROJECT_DIR$/architecture/task_response/melos_task_response.iml" />
       <module fileurl="file://$PROJECT_DIR$/widget/widget_fix_problems/melos_widget_fix_problems.iml" filepath="$PROJECT_DIR$/widget/widget_fix_problems/melos_widget_fix_problems.iml" />
       <module fileurl="file://$PROJECT_DIR$/melos_exercises.iml" filepath="$PROJECT_DIR$/melos_exercises.iml" />
     </modules>

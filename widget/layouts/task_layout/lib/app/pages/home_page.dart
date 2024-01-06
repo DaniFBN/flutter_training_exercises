@@ -1,9 +1,17 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-import 'package:task_layout/app/widgets/menu_widget.dart';
 
 import '../widgets/card_group_widget.dart';
 import '../widgets/home_app_bar_widget.dart';
+import '../widgets/menu_widget.dart';
 import '../widgets/routine_card_widget.dart';
+
+// MaterialApp
+//   Theme
+//     HomePage
+//       Scaffold
+//         Column
+//           Theme
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -57,8 +65,10 @@ class HomePage extends StatelessWidget {
           Column(
             children: [
               Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                  vertical: 12,
+                ),
                 child: MenuWidget(
                   title: 'My Task',
                   onTap: () => Navigator.of(context).pushNamed('/tasks'),

@@ -25,7 +25,7 @@ class RoutinesPage extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 8.0),
+              padding: const EdgeInsets.symmetric(vertical: 8),
               child: MenuWidget(
                 title: 'Today Task',
                 onTap: () => Navigator.of(context).pushNamed('/tasks'),

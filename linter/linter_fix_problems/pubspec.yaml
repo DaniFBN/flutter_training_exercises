@@ -19,7 +19,7 @@ dev_dependencies:
     sdk: flutter
 
   flutterando_analysis: 0.0.2
-  dart_code_metrics: 5.5.1
+  flutterando_metrics: 5.7.6
 
 flutter:
   uses-material-design: true

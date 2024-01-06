@@ -1,8 +1,6 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:flutter/material.dart';
-
 import 'package:exercise_2/app/core/modules/user/stores/user_store.dart';
 import 'package:exercise_2/app/core/shared/stores/theme_store.dart';
+import 'package:flutter/material.dart';
 
 import '../../../core/shared/services/navigator_service.dart';
 

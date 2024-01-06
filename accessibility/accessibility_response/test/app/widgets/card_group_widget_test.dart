@@ -31,7 +31,7 @@ void main() {
           ),
         ));
 
-        await expectLater(tester, meetsGuideline(androidTapTargetGuideline));
+        await expectLater(tester, meetsGuideline(iOSTapTargetGuideline));
         semanticsHandle.dispose();
       });
 

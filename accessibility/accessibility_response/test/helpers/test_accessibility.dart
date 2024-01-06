@@ -1,7 +1,6 @@
 import 'package:accessibility_response/app/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-// ignore: depend_on_referenced_packages
 import 'package:meta/meta.dart';
 
 import 'mock_image.dart';

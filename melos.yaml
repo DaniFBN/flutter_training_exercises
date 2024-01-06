@@ -8,4 +8,6 @@ packages:
   - documentation/**
   - linter/**
   - modularizing/**
+  - native/**
+  - styling_platforms/**
   - widget/**

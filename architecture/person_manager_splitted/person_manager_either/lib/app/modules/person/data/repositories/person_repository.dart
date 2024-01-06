@@ -21,4 +21,13 @@ class PersonRepository extends Repository implements IPersonRepository {
       },
     );
   }
+
+  @override
+  AsyncEither<AppFailure, List<PersonEntity>> get() {
+    return execute<List<PersonEntity>>(
+      callback: () async {
+        return await _datasource.get();
+      },
+    );
+  }
 }

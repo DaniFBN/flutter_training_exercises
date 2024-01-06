@@ -36,9 +36,9 @@ class HomePage extends StatelessWidget {
               ),
               ValueListenableBuilder(
                 valueListenable: userStore,
-                builder: (_, email, __) {
+                builder: (_, user, __) {
                   return Text(
-                    'UserStore: $email',
+                    'UserStore: ${user?.email}',
                     style: theme.textTheme.titleLarge,
                   );
                 },

@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 class CardGroupWidget extends StatelessWidget {
   const CardGroupWidget({
-    super.key,
     required this.icon,
     required this.title,
     required this.subtitle,
+    super.key,
   });
 
   final IconData icon;

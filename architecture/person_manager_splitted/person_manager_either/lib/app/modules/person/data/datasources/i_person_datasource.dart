@@ -3,4 +3,5 @@ import '../../domain/params/create_person_param.dart';
 
 abstract class IPersonDatasource {
   Future<PersonEntity> create(CreatePersonParam param);
+  Future<List<PersonEntity>> get();
 }

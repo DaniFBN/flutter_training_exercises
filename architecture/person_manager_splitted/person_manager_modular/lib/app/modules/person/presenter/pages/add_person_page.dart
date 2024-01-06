@@ -48,7 +48,7 @@ class _AddPersonPageState extends State<AddPersonPage> {
           );
         } else if (event is FailureAddPersonState) {
           ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text(event.message)),
+            SnackBar(content: Text(event.failure.message)),
           );
         }
       },
@@ -150,4 +150,3 @@ class _AddPersonPageState extends State<AddPersonPage> {
     );
   }
 }
-

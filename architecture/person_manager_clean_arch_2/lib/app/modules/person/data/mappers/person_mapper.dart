@@ -1,3 +1,5 @@
+import 'package:person_manager_clean_arch_2/app/core/value_objects/name_vo.dart';
+
 import '../../../../core/exceptions/mapper_exception.dart';
 import '../../../../core/value_objects/email_vo.dart';
 import '../../domain/entities/person_entity.dart';
@@ -6,7 +8,7 @@ import '../../domain/params/create_person_param.dart';
 abstract final class PersonMapper {
   static Map<String, dynamic> createParamToMap(CreatePersonParam param) {
     return {
-      'name': param.name,
+      'name': param.name.value,
       'cpf': param.cpf,
       'birth': param.birth.millisecondsSinceEpoch,
       'email': param.email?.value,
@@ -24,7 +26,7 @@ abstract final class PersonMapper {
 
       return PersonEntity(
         id: map['id'],
-        name: map['name'],
+        name: NameVO(map['name']),
         cpf: map['cpf'],
         birth: birth,
         email: email,

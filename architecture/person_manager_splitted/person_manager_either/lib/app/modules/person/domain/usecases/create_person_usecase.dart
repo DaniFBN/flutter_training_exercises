@@ -26,7 +26,7 @@ class CreatePersonUsecase implements ICreatePersonUsecase {
       return Left(DomainFailure('Email inválido'));
     }
 
-    final handledCpf = param.cpf.trim().replaceAll('[.-]', '');
+    final handledCpf = param.cpf.trim().replaceAll(RegExp('[.-]'), '');
     final cpfRegex = RegExp(r'^[0-9]{11}$');
 
     final cpfIsValidByRegex = cpfRegex.hasMatch(handledCpf);
@@ -41,7 +41,7 @@ class CreatePersonUsecase implements ICreatePersonUsecase {
       return Left(DomainFailure('Data de nascimento inválida. Maior de 130'));
     }
 
-    final handledPhone = param.phone.trim().replaceAll('[()- ]', '');
+    final handledPhone = param.phone.trim().replaceAll(RegExp('[ ()-]'), '');
     final phoneRegex = RegExp(r'^[0-9]{11}$');
     if (!phoneRegex.hasMatch(handledPhone)) {
       return Left(DomainFailure('Telefone inválido'));

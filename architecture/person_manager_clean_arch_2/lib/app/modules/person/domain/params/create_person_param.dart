@@ -6,21 +6,34 @@ import '../../../../core/exceptions/validation_exception.dart';
 import '../../../../core/utils/result.dart';
 import '../../../../core/value_objects/email_vo.dart';
 
-class CreatePersonParam with EmailValidatorMixin {
+abstract class Param {
+  Param() {
+    validate();
+  }
+
+  final List<String> errors = [];
+  bool get hasError => errors.isNotEmpty;
+
+  Result<Unit, AppException> validate();
+}
+
+class CreatePersonParam extends Param with EmailValidatorMixin {
   final NameVO name;
   final String cpf;
   final DateTime birth;
   final EmailVO? email;
 
-  const CreatePersonParam({
+  CreatePersonParam({
     required this.name,
     required this.cpf,
     required this.birth,
     this.email,
   });
 
+  @override
   Result<Unit, AppException> validate() {
     if (name.hasError) {
+      errors.add(name.error!);
       return Result.failure(ValidationException(name.error!));
     }
 

@@ -19,4 +19,12 @@ class PersonDatasource implements IPersonDatasource {
     final person = PersonMapper.fromMap(response);
     return person;
   }
+
+  @override
+  Future<List<PersonEntity>> get() async {
+    final response = await _localStorage.get(_key);
+
+    final persons = response.map(PersonMapper.fromMap);
+    return persons.toList();
+  }
 }

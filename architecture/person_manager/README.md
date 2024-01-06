@@ -50,7 +50,7 @@ Core
 
   Modules
 
-    Presenter - Page, Reativiade, Controller
+    Presenter - Page, Reatividade, Controller
 
     Domain - Usecase
 
@@ -60,7 +60,7 @@ Core
 
 Modules
 
-  Presenter - Page, Reativiade, Controller
+  Presenter - Page, Reatividade, Controller
 
   Domain - Usecase
 
@@ -68,5 +68,3 @@ Modules
 
   External - Datasource, Services
 
-
- 

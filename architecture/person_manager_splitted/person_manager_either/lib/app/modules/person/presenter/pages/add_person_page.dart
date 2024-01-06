@@ -2,6 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+import 'package:person_manager_either/app/modules/person/presenter/cubit/persons_cubit.dart';
 
 import '../../domain/entities/address_entity.dart';
 import '../../domain/params/create_person_param.dart';
@@ -11,9 +13,11 @@ import '../cubit/state/add_person_state.dart';
 class AddPersonPage extends StatefulWidget {
   const AddPersonPage({
     Key? key,
+    required this.personsCubit,
     required this.cubit,
   }) : super(key: key);
 
+  final PersonsCubit personsCubit;
   final AddPersonCubit cubit;
 
   @override
@@ -36,16 +40,11 @@ class _AddPersonPageState extends State<AddPersonPage> {
     cubitSubscription = widget.cubit.stream.listen(
       (event) {
         if (event is SuccessAddPersonState) {
-          showDialog(
-            context: context,
-            builder: (context) {
-              return const Dialog(
-                child: Center(
-                  child: Text('Deu certo'),
-                ),
-              );
-            },
+          widget.personsCubit.get();
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('Pessoa cadastrada')),
           );
+          Modular.to.pop();
         } else if (event is FailureAddPersonState) {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(content: Text(event.message)),
@@ -150,4 +149,3 @@ class _AddPersonPageState extends State<AddPersonPage> {
     );
   }
 }
-

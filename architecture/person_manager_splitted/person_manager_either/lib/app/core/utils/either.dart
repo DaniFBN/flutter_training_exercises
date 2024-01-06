@@ -39,3 +39,5 @@ class Right<Failure, Success> implements Either<Failure, Success> {
     return onRight(_value);
   }
 }
+
+typedef AsyncEither<L, R> = Future<Either<L, R>>;

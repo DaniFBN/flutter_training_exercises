@@ -1,3 +1,5 @@
+import 'package:person_manager_modular/app/core/failures/app_failure.dart';
+
 import '../../../domain/entities/person_entity.dart';
 
 sealed class AddPersonState {
@@ -19,7 +21,7 @@ class SuccessAddPersonState extends AddPersonState {
 }
 
 class FailureAddPersonState extends AddPersonState {
-  final String message;
+  final AppFailure failure;
 
-  const FailureAddPersonState(this.message);
+  const FailureAddPersonState(this.failure);
 }
